@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { Statistics } from './Statistics/Statistics';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Section } from './Section/Section';
-import { Notification } from 'Notification/Notification';
+import { Notification } from './Notification/Notification';
 
 export class App extends Component {
   state = {
@@ -18,10 +18,8 @@ export class App extends Component {
   };
 
   countPositiveFeedback = () => {
-    const sum = this.countTotalFeedback();
     const { good } = this.state;
-    const percentage = (good * 100) / sum;
-    return Math.round(percentage);
+    return Math.round((good / this.countTotalFeedback()) * 100) || 0;
   };
 
   onLeaveFeedback = e => {

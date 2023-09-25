@@ -1,0 +1,19 @@
+button {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: lightsalmon;
+  box-shadow: lightgrey;
+  cursor: pointer;
+
+  transition: 250ms;
+}
+
+button:hover,
+button.focus {
+  color: whitesmoke;
+  background-color: salmon;
+  box-shadow: grey;
+}
